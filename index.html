@@ -16,23 +16,36 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
             min-height: 100vh;
         }
 
         .navbar {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(139, 69, 19, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 3px solid #D2691E;
         }
 
         .navbar-brand {
             font-weight: 600;
-            color: #2c3e50;
+            color: #FFE4C4;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .nav-link {
+            color: #FFE4C4 !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #FFD700 !important;
+            transform: translateY(-2px);
         }
 
         .main-content {
-            padding: 40px 0;
+            padding: 120px 0 40px 0;
         }
 
         .container {
@@ -44,23 +57,29 @@
             width: 100%;
             height: 80vh;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            background: #fff;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            background: rgba(139, 69, 19, 0.95);
             overflow: hidden;
             padding: 20px;
+            border: 3px solid #D2691E;
         }
 
         .swiper-slide {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #fff;
+            background: #8B4513;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border: 2px solid #e0e0e0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            border: 3px solid #CD853F;
             margin: 10px;
             aspect-ratio: 7308/3375;
+            transition: transform 0.3s ease;
+        }
+
+        .swiper-slide:hover {
+            transform: scale(1.02);
         }
 
         .swiper-slide img {
@@ -72,80 +91,80 @@
 
         .swiper-button-next,
         .swiper-button-prev {
-            color: #fff;
-            background: rgba(0, 0, 0, 0.5);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            border: 2px solid #fff;
-        }
-
-        .swiper-button-next:hover,
-        .swiper-button-prev:hover {
-            background: rgba(0, 0, 0, 0.8);
-            transform: scale(1.1);
+            display: none;
         }
 
         .swiper-pagination-bullet {
             width: 12px;
             height: 12px;
-            background: #fff;
-            opacity: 0.5;
-            border: 2px solid #000;
+            background: #FFE4C4;
+            opacity: 0.7;
+            border: 2px solid #D2691E;
+            transition: all 0.3s ease;
         }
 
         .swiper-pagination-bullet-active {
             opacity: 1;
-            background: #fff;
+            background: #D2691E;
             transform: scale(1.2);
         }
 
         .footer {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(139, 69, 19, 0.95);
             backdrop-filter: blur(10px);
-            padding: 20px 0;
+            padding: 25px 0;
             margin-top: 40px;
-            box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+            border-top: 3px solid #D2691E;
         }
 
         .social-icons a {
-            color: #2c3e50;
-            font-size: 1.5rem;
-            margin: 0 10px;
+            color: #FFE4C4;
+            font-size: 1.8rem;
+            margin: 0 15px;
             transition: all 0.3s ease;
         }
 
         .social-icons a:hover {
-            color: #3498db;
-            transform: translateY(-3px);
+            color: #FFD700;
+            transform: translateY(-5px) scale(1.1);
         }
 
         .section-title {
             text-align: center;
             margin-bottom: 30px;
-            color: #2c3e50;
-            font-weight: 600;
+            color: #FFE4C4;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 2.5rem;
         }
 
         .decorative-element {
             position: absolute;
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(45deg, #3498db, #2ecc71);
-            opacity: 0.1;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #8B4513, #D2691E);
+            opacity: 0.15;
             border-radius: 50%;
             z-index: -1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
         }
 
         .decorative-element.top-right {
-            top: -100px;
-            right: -100px;
+            top: -150px;
+            right: -150px;
         }
 
         .decorative-element.bottom-left {
-            bottom: -100px;
-            left: -100px;
+            bottom: -150px;
+            left: -150px;
+            animation-delay: -3s;
         }
 
         @media (max-width: 768px) {
@@ -211,8 +230,6 @@
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
             </div>
         </div>
     </div>
@@ -249,14 +266,12 @@
                 el: '.swiper-pagination',
                 clickable: true,
             },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
             effect: 'fade',
             fadeEffect: {
                 crossFade: true
-            }
+            },
+            allowTouchMove: true,
+            grabCursor: true
         });
     </script>
 </body>
